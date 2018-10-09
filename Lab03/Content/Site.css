@@ -1,0 +1,67 @@
+﻿* {}
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.navbar-inverse {
+    background: #654EA3!important;
+    border: none;
+}
+.navbar-nav a, .navbar-toggle, .navbar-header a {
+    color: #fff!important;
+}
+
+.rss-list tr td a {
+    color: #654EA3!important;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.rss-list tr td a:hover {
+    text-decoration: none;
+    color: black!important;
+}
+
+.btn-color {
+    color: #ffffff;
+    background-color: #654EA3!important;
+    border-color: #654EA3!important;
+    transition: 0.5s;
+}
+.btn-color:hover {
+   color: #ffffff;
+    background-color: #3276b1!important;
+    border-color: #3276b1!important;
+}
+
+input.input-rss {
+    width:80%!important;
+    float: left;
+    border-radius: 0px;
+}
+input.btn-color {
+    width:20%!important;
+    border-radius: 0px;
+}
+
+.mg-50 {margin-top: 50px!important;}

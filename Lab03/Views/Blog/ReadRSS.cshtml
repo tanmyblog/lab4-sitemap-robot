@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Lab03.Models.Article>
+
+@{
+    ViewBag.Title = "ReadRSS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Đọc RSS từ website bên ngoài</h2>
+
+<b>Gợi ý rss từ VnExpress</b>
+
+<table class="table table-hover table-striped" >
+    <tbody>
+        <tr>
+            <td>https://vnexpress.net/rss/thoi-su.rss</td>
+            <td>https://vnexpress.net/rss/thoi-gioi.rss</td>
+            <td>https://vnexpress.net/rss/giao-duc.rss</td>
+            <td>https://vnexpress.net/rss/kinh-doanh.rss</td>
+        </tr>
+        <tr>
+            <td>https://vnexpress.net/rss/startup.rss</td>
+            <td>https://vnexpress.net/rss/giai-tri.rss</td>
+            <td>https://vnexpress.net/rss/the-thao.rss</td>
+            <td>https://vnexpress.net/rss/phap-luat.rss</td>
+        </tr>
+        <tr>
+            <td>https://vnexpress.net/rss/suc-khoe.rss</td>
+            <td>https://vnexpress.net/rss/gia-dinh.rss</td>
+            <td>https://vnexpress.net/rss/du-lich.rss</td>
+            <td>https://vnexpress.net/rss/khoa-hoc.rss</td>
+        </tr>
+
+    </tbody>
+</table>
+
+@using (Html.BeginForm())
+{
+    <input type="URL" name="url" placeholder="Nhập địa chỉ đọc RSS" class="form-control input-rss" value="@ViewBag.URL" style="max-width: 100%" />
+    <input type="submit" value="Đọc tin RSS" class="btn btn-color" />
+}
+
+<table class="table table-hover table-striped mg-50">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Alias</th>
+            <th>Description</th>
+            <th>DatePublished</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.RSSFeed != null)
+        {
+            foreach (var item in ViewBag.RSSFeed)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td><a href="@item.Alias" target="_blank">@item.Alias</a></td>
+                    <td>@item.Description</td>
+                    <td>@item.DatePublished</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
